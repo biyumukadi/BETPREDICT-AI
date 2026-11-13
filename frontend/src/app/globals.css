@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-950: #061427;
+  --navy-900: #0b1f3a;
+  --navy-800: #123056;
+  --navy-700: #1a3f6d;
+  --emerald-500: #10b981;
+  --emerald-400: #34d399;
+  --emerald-600: #059669;
+  --surface: #f4f7fb;
+  --surface-elevated: #ffffff;
+  --ink: #0b1f3a;
+  --muted: #5b6b7c;
+  --line: rgba(18, 48, 86, 0.12);
+  --danger: #dc2626;
+  --warning: #d97706;
+  --background: var(--surface);
+  --foreground: var(--ink);
+}
+
+.dark {
+  --surface: #061427;
+  --surface-elevated: #0b1f3a;
+  --ink: #eef3f9;
+  --muted: #9aacbe;
+  --line: rgba(238, 243, 249, 0.12);
+  --background: var(--surface);
+  --foreground: var(--ink);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(16, 185, 129, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(18, 48, 86, 0.18), transparent 50%),
+    linear-gradient(180deg, var(--surface) 0%, color-mix(in srgb, var(--surface) 88%, #dbe7f5) 100%);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.dark body {
+  background:
+    radial-gradient(1000px 500px at 15% -15%, rgba(16, 185, 129, 0.14), transparent 50%),
+    radial-gradient(800px 480px at 100% 0%, rgba(52, 211, 153, 0.08), transparent 45%),
+    linear-gradient(180deg, #061427 0%, #0a1930 100%);
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .panel {
+    @apply rounded-2xl border bg-[var(--surface-elevated)] shadow-sm;
+    border-color: var(--line);
+  }
+  .text-muted {
+    color: var(--muted);
+  }
+}
